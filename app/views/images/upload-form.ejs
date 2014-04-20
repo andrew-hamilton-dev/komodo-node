@@ -1,0 +1,33 @@
+<%- include ../header.ejs %>
+<%- include ../nav.ejs %>
+
+    <div class="container image-upload-form" role="main">
+	    <div class="row">
+	    	<h2>Image Upload</h2>
+	   	</div>
+	    <div class="row">
+			<form class="card input-form" role="form" method="post" enctype="multipart/form-data" action="/api/images">
+			  	<div class="form-group">
+					<label for="label">Image Label</label>
+					<input type="text" name="label" class="form-control" placeholder="Write your image label here." required autofocus>
+					<p class="help-block">Short Label to identify the image in your library.</p>
+				</div>
+
+			  	<div class="form-group">
+					<label for="description">Image Description</label>
+		        	<textarea name="description" class="form-control" cols="30" rows="5" placeholder="Write your image description here." required autofocus></textarea>
+		        	<p class="help-block">Description to identify the image for screen readers and alt tags.</p>
+				</div>
+
+			  	<div class="form-group">
+					<label for="file">Image File</label>
+		        	<input type="file" id="file" name="file" class="form-control" placeholder="" required>
+					<p class="help-block">Select an Image file from your computer to upload to your library.</p>
+				</div>
+
+		        <button class="btn btn-lg btn-primary btn-block" type="submit">Upload</button>
+		    </form>
+	    </div>
+    </div>
+
+<%- include ../footer.ejs %>

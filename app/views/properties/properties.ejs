@@ -1,0 +1,17 @@
+<% var monthNames = new Array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"); %>
+<% var propertyCardClass = "col-xs-12 col-sm-6 col-md-4"; %>
+
+<%- include ../header.ejs %>
+<%- include ../nav.ejs %>
+
+    <div class="container" role="main">
+    <div class="row">
+      <h1 class="col-xs-12 text-center">Properties</h1>
+    </div>
+      <% if (properties.length) { %>
+          <% properties.forEach(function(property){ %>
+            <%- include property-card.ejs %>
+          <% }) %>
+      <% } %>
+</div>
+<%- include ../footer.ejs %>

@@ -1,0 +1,44 @@
+<% var monthNames = new Array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"); %>
+<% var imageCardClass = "col-xs-12 col-sm-6 col-md-4"; %>
+<%- include ../header.ejs %>
+<%- include ../nav.ejs %>
+
+   <div class="container" role="main" ng-controller="ImageListController">
+    <div class="row">
+      <h1 class="col-xs-12 text-center">Image Library</h1>
+    </div>
+    <div class="row">
+
+    <div class="btn-group image-list-sorter">
+      <a href="/images?sort=date-dsc"><button type="button" class="btn btn-default {{setActiveSort('date-dsc')}}">Newest First</button></a>
+      <a href="/images?sort=date-asc"><button type="button" class="btn btn-default {{setActiveSort('date-asc')}}">Oldest First</button></a>
+      <a href="/images?sort=name-asc"><button type="button" class="btn btn-default {{setActiveSort('name-asc')}}">A-Z</button></a>
+      <a href="/images?sort=name-dsc"><button type="button" class="btn btn-default {{setActiveSort('name-dsc')}}">Z-A</button></a>
+    </div>
+
+     <a href="/images/upload">
+        <button type="button" class="new-image btn btn-default btn-lg">
+          <span class="glyphicon glyphicon-plus"></span> Add New Image
+        </button>    
+      </a> 
+    </div>
+
+    <div class="row pagination-container">
+        <%- paginateHTML(images) %>
+      </div>
+
+    <div class="row">
+
+      <% images.forEach(function(image, index) { %>
+          <%- include image-card-list.ejs %>
+      <% }); %>
+
+    </div>
+
+    <div class="row pagination-container">
+      <%- paginateHTML(images) %>
+    </div>
+
+  </div>
+
+<%- include ../footer.ejs %>

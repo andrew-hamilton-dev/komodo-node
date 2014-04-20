@@ -1,0 +1,16 @@
+<%- include ../header.ejs %>
+<%- include ../nav.ejs %>
+
+
+    <div class="container" role="main">
+    	<div class="row text-center">
+    		<h1>Image Upload - Unsuccessful</h1>
+    		<div class="card">
+    		<h2><%= image.originalname %> was not uploaded.</h2>
+			<p>File must be an image file with an extension of one of the following: .gif, .jpg, .jpeg, .png</p>
+  			<p><a class="btn btn-lg btn-primary btn-block" href="/upload">Try Another Upload</a></p>
+  			</div>
+    	</div>
+	</div>
+
+<%- include ../footer.ejs %>

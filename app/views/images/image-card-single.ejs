@@ -1,0 +1,62 @@
+<div class="image card-container <%= imageCardClass %>">
+  <div class="card card-{{image._id}}">
+      <div class="top-toolbar">
+        <button type="button" class="btn btn-default btn-xs" ng-click="closeImage(image)">
+         <span class="glyphicon glyphicon-remove" title="CLOSE"></span> Back
+        </button>
+      </div>
+      <!-- <pre> {{image}}</pre>
+      <pre> {{masterImage}} </pre> -->
+      <p class="updated">
+        {{image.updated| date:'MM/dd/yyyy @ h:mm a'}}
+      </p>
+      <h3 class="break-word">
+        {{image.name}}
+      </h3>
+
+      <p>
+          <a href="{{image.path}}"><img ng-src="{{image.path}}" title="{{image.label}}" alt="{{image.description}}" /></a>
+      </p>
+
+      <p class="info-field">
+        <span>Original Name</span>: <br /> 
+        {{image.originalname}}
+      </p>
+
+      <div class="form-group info-field">
+        <label for="label">Image Label</label>
+        <input type="text" name="label" class="form-control" ng-change="onChange(image)" ng-model="image.label" placeholder="Write your image label here." required autofocus>
+        <p class="help-block">Short Label to identify the image in your library.</p>
+      </div>
+
+      <div class="form-group info-field">
+        <label for="description">Image Description</label>
+            <textarea name="description" class="form-control" ng-change="onChange(image)" ng-model="image.description" cols="30" rows="5" placeholder="Write your image description here." required autofocus></textarea>
+            <p class="help-block">Description to identify the image for screen readers and alt tags.</p>
+      </div>
+
+      <p class="info-field">
+        <span>Encoding</span>: <br /> 
+        {{image.encoding}}
+      </p>
+      <p class="info-field">
+        <span>Mimetype</span>: <br /> 
+        {{image.mimetype}}
+      </p>
+      <p class="info-field">
+        <span>Extension</span>:<br /> 
+        {{image.extension}}
+      </p>  
+      <div class="bottom-toolbar button-group">
+        <button type="button" class="btn btn-default {{revertStatus}}" ng-click="revertImage(image)">
+          <span class="glyphicon glyphicon-open" title="REVERT"></span> Revert Changes
+        </button>
+        <button type="button" class="btn btn-default" ng-click="updateImage(image)">
+          <span class="glyphicon {{statusIcon}}" title="SAVE"></span> {{dataStateMessage}}
+        </button>
+        <button type="button" class="btn btn-default" ng-click="deleteImage(image)">
+          <span class="glyphicon glyphicon-trash" title="DELETE"></span> Delete
+         </button>
+      </div>  
+  </div>
+</div>

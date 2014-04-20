@@ -1,0 +1,45 @@
+ <% var updatedDate = new Date(image.updated); %>
+<div class="image card-container <%= imageCardClass %>">
+  <div class="card card-<%= image._id %>">
+      <p class="updated">
+        <%= monthNames[updatedDate.getMonth()] %> <%= updatedDate.getDate() %>, <%= updatedDate.getFullYear() %> @ <%- formatDateAMPM(updatedDate) %>
+      </p>
+      <h3 class="break-word">
+        <%= image.name %>
+      </h3>
+      <p>
+          <a href="<%= image.path %>"><img src="<%= image.path %>" title="<%= image.label %>" alt="<%= image.description %>" /></a>
+      </p>
+      <p class="info-field">
+        <span>Original Name</span>: <br /> 
+        <%= image.originalname %>
+      </p>
+      <p class="info-field">
+        <span>Image Label</span>: <br /> 
+        <%= image.label %>
+      </p>
+      <p class="info-field">
+        <span>Image Description</span>:<br />  
+        <%= image.description %>
+      </p>
+      <p class="info-field">
+        <span>Encoding</span>: <br /> 
+        <%= image.encoding %>
+      </p>
+      <p class="info-field">
+        <span>Mimetype</span>: <br /> 
+        <%= image.mimetype %>
+      </p>
+      <p class="info-field">
+        <span>Extension</span>:<br /> 
+        <%= image.extension %>
+      </p>  
+      <div class="bottom-toolbar">
+        <a href="/images/<%= image._id %>">
+          <button type="button" class="btn btn-default">
+            <span class="glyphicon glyphicon-pencil" title="EDIT"></span>
+          </button>
+        </a>
+      </div>  
+  </div>
+</div>

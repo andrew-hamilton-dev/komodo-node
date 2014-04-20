@@ -1,0 +1,52 @@
+              <% var updatedDate = new Date(property.updated); %>
+              <div class="property card-container <%= propertyCardClass %>">
+              <div class="card">
+                <h2 class="break-word">
+                  <a href="/properties/<%= property._id %>"><%= property.title %></a>
+                </h3>
+                <p><%= property.slug %><p>
+                <p>
+                  <%= property.address.street %><br/>
+                  <%= property.address.city %>, <%= property.address.province %><br/>
+                  <%= property.address.zip %>
+                </p>
+
+                <p class="info-field">
+                  <%= property.description %>
+                </p>
+
+                <p class="info-field">
+                  <span>Features</span>:<br />  
+                  <ul class="property-features">
+                    <% property.features.forEach(function(feature){ %>
+                      <li><%= feature %></li>
+                    <% }) %>
+                  </ul>
+                </p>
+
+                <% if (property.images.length > 0) { %>
+                  <p class="info-field">
+                    <span>Images</span>:
+                    <ul>
+                      <% for(var i=0; i<property.images.length; i++) { %>
+                          <li>
+                            <a href="<%= property.images[i].path %>">
+                              <img src="<%= property.images[i].path %>"/>
+                            </a>
+                          </li>
+                      <% } %>
+                    </ul>
+                  </p>
+                <% } %>
+
+                <p class="info-field">
+                  <span>Contact</span>:<br />
+                  <%= property.contact.name %> <%= property.contact.phone %><br />
+                  <%= property.contact.email %>
+                </p>
+
+                <p>&nbsp;</p>
+                <p class="updated"><%= monthNames[updatedDate.getMonth()] %> <%= updatedDate.getDate() %>, <%= updatedDate.getFullYear() %> <%- formatDateAMPM(updatedDate) %>
+                </p>
+              </div>
+            </div>

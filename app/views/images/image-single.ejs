@@ -1,0 +1,18 @@
+<% var monthNames = new Array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"); %>
+<% var imageCardClass = ""; %>
+<%- include ../header.ejs %>
+<%- include ../nav.ejs %>
+
+
+   <div class="container" role="main" ng-controller="ImageController" ng-init="loadImage('<%= images[0]._id %>')">
+    <div class="row">
+      <h1 class="col-xs-12 text-center">Image</h1>
+    </div>
+    <div class="row">
+
+          <%- include image-card-single.ejs %>
+
+    </div>
+  </div>
+
+<%- include ../footer.ejs %>

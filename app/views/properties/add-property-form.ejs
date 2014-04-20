@@ -1,0 +1,91 @@
+<%- include header.ejs %>
+<%- include nav.ejs %>
+
+    <div class="container" role="main">
+		<form class="card input-form new-property-form" role="form" method="post" enctype="multipart/form-data" action="/properties">
+	        <h2>Add New Property</h2>
+
+		  	<div class="form-group">
+				<label for="title">Title</label>
+				<input type="text" name="title" class="form-control" placeholder="Write your property title here." required autofocus>
+				<p class="help-block">Short title that is displayed to quickly identify your property.</p>
+			</div>
+
+		  	<div class="form-group">
+				<label for="slug">Slug</label>
+				<input type="text" name="slug" class="form-control" placeholder="Write your property slug here." required autofocus>
+				<p class="help-block">Short slug to provide a quick summary of the property.</p>
+			</div>
+
+		  	<div class="form-group">
+				<label for="description">Description</label>
+				<textarea name="description" rows="5" cols="30" class="form-control" placeholder="Write your property description here." required autofocus></textarea>
+				<p class="help-block">A detailed description of your property here.</p>
+			</div>
+
+		  	<div class="form-group">				
+				<label for="street">Street Address</label>
+		    	<input class="form-control" type="text" name="street" />
+				<p class="help-block">Building number and street name.</p>
+			</div>
+
+		  	<div class="form-group">				
+			    <label for="city">City</label>
+			    <input class="form-control" type="text" name="city" />
+				<p class="help-block">The city your property is in.</p>
+			</div>
+
+		  	<div class="form-group">				
+		    	<label for="province">province</label>
+		    	<input class="form-control" type="text" name="province" />
+				<p class="help-block">The province your property is in.</p>
+			</div>
+ 
+ 		  	<div class="form-group">				
+		    	<label for="zip">Postal Code</label>
+		    	<input class="form-control" type="text" name="zip" />
+				<p class="help-block">The postal code of your property.</p>
+			</div>
+
+ 		  	<div class="form-group">				
+		    	<label for="latitude">Latitude Coordinate</label>
+		    	<input class="form-control" type="text" name="latitude" />
+				<p class="help-block">The google maps latitude coordinate your property.</p>
+			</div>
+
+ 		  	<div class="form-group">				
+		    	<label for="longitude">Longitude Coordinate</label>
+		    	<input class="form-control" type="text" name="longitude" />
+				<p class="help-block">The google maps longitude coordinate your property.</p>
+			</div>
+
+		  	<div class="form-group">
+				<label for="features">Features</label>
+				<textarea name="features" rows="5" cols="30" class="form-control" placeholder="" autofocus></textarea>
+				<p class="help-block">A comma seperated list of features about you property.</p>
+			</div>
+
+ 		  	<div class="form-group">				
+		    	<label for="name">Contact Name</label>
+		    	<input class="form-control" type="text" name="name" />
+				<p class="help-block">The name of the point of contact for property inquiries.</p>
+			</div>
+
+ 		  	<div class="form-group">				
+		    	<label for="phone">Contact Phone</label>
+		    	<input class="form-control" type="text" name="phone" />
+				<p class="help-block">The phone number of the point of contact for property inquiries.</p>
+			</div>
+
+ 		  	<div class="form-group">				
+		    	<label for="email">Contact Email</label>
+		    	<input class="form-control" type="text" name="email" />
+				<p class="help-block">The phone number of the point of contact for property inquiries.</p>
+			</div>
+
+ 		  	<div class="form-group">				
+		    	<label for="phone">Images</label>
+		    	<p class="help-block">TODO: Add Image Upload Integration</p>
+			</div>
+
+		    <button class="btn btn-lg btn-primary btn-block" type="submit">Add Property</button>
