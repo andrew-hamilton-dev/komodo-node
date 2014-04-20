@@ -1,11 +1,11 @@
 {
-  "name": "Komodo Node",
+  "name": "KomodoNode",
   "version": "0.0.1",
   "private": true,
   "dependencies": {
     "express": "~4.0.0",
     "body-parser": "~1.0.0",
-    "ejs": "~4.0.0",
+    "ejs": "~1.0.0",
     "mongoose": "~3.8.8",
     "nodemon": "~1.0.17",
     "multer": "~0.0.5"

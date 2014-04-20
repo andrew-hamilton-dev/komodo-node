@@ -1,6 +1,6 @@
 var express = require('express');
 var path = require('path');
-var favicon = require('static-favicon');
+//var favicon = require('static-favicon');
 var bodyParser = require('body-parser');
 var multer = require('multer');
 var mongoose = require('mongoose');
@@ -106,7 +106,7 @@ app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'app/public')));
 
 //apply favicon
-app.use(favicon());
+//app.use(favicon());
 
 //middleware for parsing json objects in http requests
 app.use(bodyParser.json());
